@@ -8,7 +8,7 @@ const App = () => {
       <div className="App">
         <Router>
           <Sidebar />
-          <Content />
+          <Content></Content>
         </Router>
       </div>
     </Fragment>

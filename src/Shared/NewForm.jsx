@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
-
-const NewForm = () => {
+import { Link } from "react-router-dom";
+const NewForm = ({ link, title }) => {
   return (
     <Fragment>
       <div className="py-4">
         <div className="dropdown">
-          <button
+          <Link
+            to={link}
             className="
               btn btn-gray-800
               d-inline-flex
@@ -25,14 +26,14 @@ const NewForm = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M12 6v6m0 0v6m0-6h6m-6 0H6"
               ></path>
             </svg>
-            New Form
-          </button>
+            {title}
+          </Link>
         </div>
       </div>
     </Fragment>
