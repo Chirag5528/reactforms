@@ -15,24 +15,38 @@
 
 import React from "react";
 import FieldActions from "../FieldActions";
-const TextField = () => {
+const TextField = ({
+  control: {
+    type,
+    required,
+    label,
+    description,
+    placeholder,
+    className,
+    name,
+    value,
+    subtype,
+    maxLength,
+  },
+}) => {
+  const time = new Date().getTime();
   return (
     <React.Fragment>
       <FieldActions>
         <div className="form-group">
           <label htmlFor="id_comes_here">Label Comes Here</label>
           <input
-            type="text"
-            className="form-control class comes here"
-            name="name comes here"
-            id="id_comes_here"
-            required
-            placeholder="Enter Placeholder Here"
-            maxLength="255"
+            type={type}
+            name={`${type}-${name}-${time}`}
+            id={`${type}-${name}-${time}`}
+            placeholder={placeholder}
+            className={`form-control ${className}`}
+            required={required}
+            maxLength={maxLength}
           />
         </div>
-        <div className="form-group">
-          <small>Description Comes Here</small>
+        <div className="form-group col-12">
+          <small>{description}</small>
         </div>
       </FieldActions>
     </React.Fragment>

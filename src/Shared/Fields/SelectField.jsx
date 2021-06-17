@@ -26,32 +26,31 @@
 import React from "react";
 import FieldActions from "../FieldActions";
 
-const SelectField = () => {
-  const values = [
-    {
-      label: "Option 1",
-      value: "option-1",
-      selected: true,
-    },
-    {
-      label: "Option 2",
-      value: "option-2",
-    },
-    {
-      label: "Option 3",
-      value: "option-3",
-    },
-  ];
+const SelectField = ({
+  control: {
+    field_name,
+    type,
+    required,
+    label,
+    description,
+    placeholder,
+    className,
+    name,
+    multiple,
+    values,
+  },
+}) => {
+  const time = new Date().getTime();
   return (
     <React.Fragment>
       <FieldActions>
         <div className="form-group col-12">
-          <label htmlFor="id comes here">Label Comes Here</label>
+          <label htmlFor={`${type}-${name}-${time}`}>{label}</label>
           <select
-            name="name comes here"
-            id="id comes here"
-            placeholder="placeholder comes here"
-            className="form-control class comes here"
+            name={`${type}-${name}-${time}`}
+            id={`${type}-${name}-${time}`}
+            placeholder={placeholder}
+            className={`form-control ${className}`}
           >
             {values.map((val, index) => {
               return (

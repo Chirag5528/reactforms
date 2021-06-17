@@ -8,14 +8,15 @@
 
 import React from "react";
 
-const HiddenField = () => {
+const HiddenField = ({ control: { field_name, type, name, value } }) => {
+  const time = new Date().getTime();
   return (
     <React.Fragment>
       <input
         type="hidden"
-        name="hidden"
-        value="hidden_value"
-        id="hidden_field"
+        name={`hidden-${name}-${time}`}
+        defaultValue={value}
+        id={`hidden-${name}-${time}`}
       />
     </React.Fragment>
   );

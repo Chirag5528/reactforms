@@ -1,12 +1,14 @@
 import React from "react";
 import FieldActions from "../FieldActions";
 
-const ButtonField = () => {
+const ButtonField = ({
+  control: { type, label, subtype, className, value },
+}) => {
   return (
     <React.Fragment>
       <FieldActions>
-        <button className="btn btn-info" type="button" value="Submit">
-          Submit
+        <button className={`btn ${className}`} type={subtype} value={value}>
+          {label}
         </button>
       </FieldActions>
     </React.Fragment>

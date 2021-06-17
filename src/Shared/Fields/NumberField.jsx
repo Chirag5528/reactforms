@@ -15,25 +15,44 @@
 */
 
 import React from "react";
-
-const NumberField = () => {
+import FieldActions from "../FieldActions";
+const NumberField = ({
+  control: {
+    field_name,
+    type,
+    label,
+    description,
+    placeholder,
+    className,
+    name,
+    value,
+    min,
+    max,
+    step,
+    title,
+  },
+}) => {
+  const time = new Date().getTime();
   return (
     <React.Fragment>
-      <div className="form-group col-12">
-        <label htmlFor="number_field">Number Label Here</label>
-        <input
-          placeholder="kl"
-          className="jkljk"
-          name="number-1623940768952-preview"
-          value="123123"
-          min="1"
-          max="22"
-          step="1"
-          type="number"
-          id="number-1623940768952-preview"
-          title="asklajsdkl"
-        />
-      </div>
+      <FieldActions>
+        <div className="form-group col-12">
+          <label htmlFor={`${name}-${time}`}>{label}</label>
+          <input
+            placeholder={placeholder}
+            className={`form-control ${className}`}
+            name={`${name}-${time}`}
+            value={value}
+            min={min}
+            max={max}
+            step={step}
+            type="number"
+            id={`${name}-${time}`}
+            title={title}
+          />
+        </div>
+        <div className="form-group col-12">{description}</div>
+      </FieldActions>
     </React.Fragment>
   );
 };

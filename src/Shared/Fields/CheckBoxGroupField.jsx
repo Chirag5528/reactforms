@@ -26,42 +26,52 @@
 import React from "react";
 import FieldActions from "../FieldActions";
 
-const CheckBoxGroupFIeld = () => {
-  const values = [
-    {
-      label: "Option 1",
-      value: "option-1",
-      selected: true,
-    },
-    {
-      label: "Option2",
-      value: "option-2",
-    },
-  ];
-
+const CheckBoxGroupFIeld = ({
+  control: {
+    label,
+    description,
+    toggle,
+    inline,
+    className,
+    name,
+    values,
+    required,
+  },
+}) => {
   return (
     <React.Fragment>
       <FieldActions>
         <div className="form-group">
-          <p>Label For Checkbox Group</p>
+          <p>
+            {label}
+            {required && <span className="fb-required">*</span>}
+          </p>
         </div>
         {values.map((value, index) => {
           return (
-            <div className="form-check" key={index}>
+            <div
+              className={[
+                inline ? `form-check-inline ${className}` : className,
+              ]}
+              key={index}
+            >
               <label className="form-check-label">
                 <input
                   type="checkbox"
                   className="form-check-input"
                   value={value.value}
                   selected={value.selected}
+                  name={name}
+                  defaultChecked={value.checked}
+                  required={required}
                 />
                 {value.label}
               </label>
             </div>
           );
         })}
-        <div className="form-group">
-          <small>Description Will Come here</small>
+        <div className="form-group col-12">
+          <small>{description}</small>
         </div>
       </FieldActions>
     </React.Fragment>

@@ -9,12 +9,13 @@
 */
 import React from "react";
 import FieldActions from "../FieldActions";
-const ParagraphField = () => {
+const ParagraphField = ({ control: { type, label, className } }) => {
+  const time = new Date().getTime();
   return (
     <React.Fragment>
       <FieldActions>
-        <p className="class is coming here" id="id is coming here">
-          this is content coming here
+        <p className={className} id={`${type}-${time}`}>
+          {label}
         </p>
       </FieldActions>
     </React.Fragment>

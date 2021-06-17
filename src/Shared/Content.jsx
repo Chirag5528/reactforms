@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Footer from "./Footer";
 
 import Home from "../Pages/Home";
+import LoadingComponent from "./LoadingComponent";
 const Forms = React.lazy(() => import("../Pages/Forms"));
 const CreateForm = React.lazy(() => import("../Pages/CreateForm"));
 
@@ -12,9 +13,7 @@ const Content = () => {
     <Fragment>
       <main className="content">
         <Switch>
-          <React.Suspense
-            fallback={<div className="lazy-loading">Loading</div>}
-          >
+          <React.Suspense fallback={<LoadingComponent />}>
             <Route path="/" exact>
               <Home />
             </Route>

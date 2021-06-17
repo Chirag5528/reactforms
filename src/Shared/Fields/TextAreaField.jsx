@@ -16,28 +16,46 @@
 
 import React from "react";
 import FieldActions from "../FieldActions";
-const TextAreaField = () => {
+const TextAreaField = ({
+  control: {
+    type,
+    required,
+    label,
+    description,
+    placeholder,
+    className,
+    name,
+    value,
+    subtype,
+    maxlength,
+    rows,
+    title,
+  },
+}) => {
+  const time = new Date().getTime();
+
   return (
     <React.Fragment>
       <FieldActions>
         <div className="form-group">
-          <label htmlFor="id_comes_here">Label Comes Here</label>
+          <label htmlFor={`${type}-${name}-${time}`}>{label}</label>
           <textarea
-            placeholder="this is placeholder"
-            className="form-control this_is_class"
-            name="this_is_name_textarea-preview"
-            maxlength="123"
-            rows="2"
-            type="textarea"
-            id="this_is_name_textarea-preview"
-            title="This is help text"
+            placeholder={placeholder}
+            className={`form-control ${className}`}
+            name={`${type}-${name}-${time}`}
+            maxlength={maxlength}
+            rows={rows}
+            type={type}
+            id={`${type}-${name}-${time}`}
+            title={title}
             spellcheck="false"
+            required={required}
           >
-            this_is_value
+            {value}
           </textarea>
         </div>
-        <div className="form-group">
-          <small>Description Comes Here</small>
+        <div className="form-group col-12">
+          <small>{description}</small>
         </div>
       </FieldActions>
     </React.Fragment>

@@ -25,22 +25,23 @@
 */
 import React from "react";
 import FieldActions from "../FieldActions";
-const Autocomplete = () => {
-  const values = [
-    {
-      label: "Option 1",
-      value: "option-1",
-    },
-    {
-      label: "Option 2",
-      value: "option-2",
-    },
-    {
-      label: "Option 3",
-      value: "option-3",
-    },
-  ];
-
+const Autocomplete = ({
+  control: {
+    className,
+    field_name,
+    label,
+    name,
+    requiredValidOption,
+    required,
+    type,
+    values,
+    placeholder,
+    id,
+    title,
+  },
+}) => {
+  // For Creating a single ID or Name
+  const time = new Date().getTime();
   return (
     <React.Fragment>
       <FieldActions>
@@ -50,27 +51,30 @@ const Autocomplete = () => {
             htmlFor="autocomplete-1623940911178-preview"
             className="fb-autocomplete-label"
           >
-            Autocomplete
-            <span className="fb-required">*</span>
+            {label}
+            {requiredValidOption && <span className="fb-required">*</span>}
           </label>
           <input
-            placeholder="Placeholder comes here"
-            className="form-control"
-            id="autocomplete-1623940911178-preview-input"
-            title="asjdklasjdkl"
+            placeholder={placeholder}
+            className={`${className} form-control`}
+            id={`${id}${time}`}
+            title={title}
             autoComplete="off"
+            name={name}
+            required={required}
+            type={type}
           />
-          <small>Help Text/Description can come here</small>
           <input
-            placeholder="Placeholder comes here"
-            className="form-control"
-            name="autocomplete-1623940911178-preview"
-            id="autocomplete-1623940911178-preview"
-            title="asjdklasjdkl"
+            placeholder={placeholder}
+            className={`${className} form-control`}
+            id={`${name}-${time}-preview`}
+            title={title}
+            autoComplete="off"
+            name={`${name}-${time}-preview`}
             type="hidden"
           />
           <ul
-            id="autocomplete-1623940911178-preview-list"
+            id={`${name}-${time}-preview-lilst`}
             className="fb-autocomplete-list"
             style={{ display: "none" }}
           >
