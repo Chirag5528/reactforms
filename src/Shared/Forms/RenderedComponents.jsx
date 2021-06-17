@@ -1,9 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
-const RenderedComponents = () => {
+const RenderedComponents = ({ control }) => {
+  useEffect(() => {
+    console.log(control);
+  });
   return (
     <Fragment>
-      <h6>here rendered components will appear</h6>
+      {control.map((ctrl, index) => {
+        return <div key={index}>{ctrl.name}</div>;
+      })}
     </Fragment>
   );
 };

@@ -13,10 +13,6 @@ const CreateForm = ({
   },
 }) => {
   const [control, setControl] = useState([]);
-  const updateControl = (ctrl) => {
-    setControl({ ...control, ctrl });
-    console.log(control);
-  };
   return (
     <Fragment>
       <Row className="align-items-center px-sm-2">
@@ -58,14 +54,18 @@ const CreateForm = ({
                   <Accordion.Collapse eventKey="0">
                     <Card.Body className="p-1">
                       <ListGroup>
-                        {controls.map((control, index) => {
+                        {controls.map((ctrl, index) => {
                           return (
                             <ListGroup.Item
-                              onClick={() => updateControl(control)}
+                              onClick={() => {
+                                setControl((control) => {
+                                  return [...control, ctrl];
+                                });
+                              }}
                               action
                               key={index}
                             >
-                              {control.field_name}
+                              {ctrl.field_name}
                             </ListGroup.Item>
                           );
                         })}
