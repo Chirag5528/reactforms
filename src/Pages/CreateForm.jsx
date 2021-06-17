@@ -26,14 +26,7 @@ const CreateForm = ({
       <hr />
       <Row>
         <Col xs={8}>
-          <Card>
-            <Card.Header>
-              <h6>Form Will Appear Here</h6>
-            </Card.Header>
-            <Card.Body>
-              <RenderedComponents control={control} />
-            </Card.Body>
-          </Card>
+          <RenderedComponents control={control} />
         </Col>
         <Col xs={4}>
           <Card>

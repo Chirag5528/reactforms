@@ -1,5 +1,4 @@
 /* 
-
   {
     "type": "date",
     "required": true,
@@ -9,7 +8,6 @@
     "className": "form-control",
     "name": "date-1623935497537"
   }
-
 */
 
 import React from "react";

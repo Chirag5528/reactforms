@@ -3,6 +3,13 @@ import Autocomplete from "../Fields/Autocomplete";
 import ButtonField from "../Fields/ButtonField";
 import DateField from "../Fields/DateField";
 import CheckBoxGroupField from "../Fields/CheckBoxGroupField";
+import FileUploadField from "../Fields/FileUploadField";
+import HeadingField from "../Fields/HeadingField";
+import HiddenField from "../Fields/HiddenField";
+import ParagraphField from "../Fields/ParagraphField";
+import SelectField from "../Fields/SelectField";
+import TextField from "../Fields/TextField";
+import TextAreaField from "../Fields/TextAreaField";
 
 const RenderedComponents = ({ control }) => {
   useEffect(() => {
@@ -17,6 +24,13 @@ const RenderedComponents = ({ control }) => {
       <ButtonField />
       <DateField />
       <CheckBoxGroupField />
+      <FileUploadField />
+      <HeadingField />
+      <HiddenField />
+      <ParagraphField />
+      <SelectField />
+      <TextField />
+      <TextAreaField />
     </Fragment>
   );
 };
