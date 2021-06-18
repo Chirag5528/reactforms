@@ -30105,4 +30105,17 @@ article .h6 {
   z-index: 9999;
 }
 
+.fields_list_group {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  transition: opacity 0.3s ease-in-out, transform 0.1s ease-in-out;
+  transform: translate(10px);
+  opacity: 0;
+}
+.fields_wrapper:hover .fields_list_group {
+  opacity: 1 !important;
+  transform: translate(0px) !important;
+}
+
 /*# sourceMappingURL=volt.css.map */

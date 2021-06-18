@@ -7,6 +7,8 @@ import Home from "../Pages/Home";
 import LoadingComponent from "./LoadingComponent";
 const Forms = React.lazy(() => import("../Pages/Forms"));
 const CreateForm = React.lazy(() => import("../Pages/CreateForm"));
+const FormTemplates = React.lazy(() => import("../Pages/FormTemplates"));
+const CreatedForms = React.lazy(() => import("../Pages/CreatedForms"));
 
 const Content = () => {
   return (
@@ -25,6 +27,14 @@ const Content = () => {
               exact
               render={(props) => <CreateForm {...props} />}
             ></Route>
+            <Route
+              path="/forms/create/:title"
+              exact
+              render={(props) => <CreatedForms {...props} />}
+            ></Route>
+            <Route path="/templates" exact>
+              <FormTemplates />
+            </Route>
           </React.Suspense>
         </Switch>
 

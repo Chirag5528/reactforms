@@ -8,8 +8,6 @@
 */
 
 import React from "react";
-import FieldActions from "../FieldActions";
-
 const Headings = ({ control: { type, subType, label, className } }) => {
   switch (subType) {
     case "h1":
@@ -32,9 +30,7 @@ const Headings = ({ control: { type, subType, label, className } }) => {
 const HeadingField = ({ control }) => {
   return (
     <React.Fragment>
-      <FieldActions>
-        <Headings control={control} />
-      </FieldActions>
+      <Headings control={control} />
     </React.Fragment>
   );
 };

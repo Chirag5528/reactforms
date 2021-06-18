@@ -7,46 +7,32 @@ import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
 const table = [
   {
-    name: "Test Form",
+    name: "Test Form Templates",
     used: 3,
     slug: "test-form",
   },
   {
-    name: "Test Form",
+    name: "Test Form Templates",
     used: 3,
     slug: "test-form",
+    published: true,
   },
   {
-    name: "Test Form",
-    used: 3,
-    slug: "test-form",
-  },
-  {
-    name: "Test Form",
-    used: 3,
-    slug: "test-form",
-  },
-  {
-    name: "Test Form",
-    used: 3,
-    slug: "test-form",
-  },
-  {
-    name: "Test Form",
+    name: "Test Form Templates",
     used: 3,
     slug: "test-form",
   },
 ];
-const Forms = ({ props }) => {
+const Templates = ({ props }) => {
   return (
     <Fragment>
       {/* {props.match} */}
       <Row className="align-items-center px-sm-2">
         <Col xs={6}>
-          <h1>All Forms</h1>
+          <h1>All Templates</h1>
         </Col>
         <Col xs={6} className="text-end">
-          <NewForm title="New Form" link="/forms/new-form" />
+          <NewForm title="New Template" link="/forms/new-form" />
         </Col>
       </Row>
       <hr />
@@ -77,12 +63,12 @@ const Forms = ({ props }) => {
                               className="form-check-input checked"
                               type="checkbox"
                               id={`flexSwitchCheckChecked${index}`}
+                              defaultChecked={tab.published}
                             />
                           </div>
                         </td>
                         <td>
                           <Link to={`/forms/${tab.slug}`}>Edit</Link> |{" "}
-                          <Link to={`/forms/create/${tab.slug}`}>View</Link> |{" "}
                           <Link to={`/forms/${tab.slug}`}>Delete</Link>
                         </td>
                       </tr>
@@ -98,4 +84,4 @@ const Forms = ({ props }) => {
   );
 };
 
-export default Forms;
+export default Templates;

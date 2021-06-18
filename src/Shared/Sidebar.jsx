@@ -134,6 +134,30 @@ const Sidebar = () => {
                           </span>
                         </Link>
                       </li>
+                      <li className="nav-item">
+                        <Link
+                          to="/templates"
+                          className="nav-link d-flex justify-content-between"
+                        >
+                          <span>
+                            <span className="sidebar-icon">
+                              <svg
+                                className="icon icon-xs me-2"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                                  clipRule="evenodd"
+                                ></path>
+                              </svg>
+                            </span>
+                            <span className="sidebar-text">Your Templates</span>
+                          </span>
+                        </Link>
+                      </li>
                       <li
                         role="separator"
                         className="dropdown-divider mt-4 mb-3 border-gray-700"

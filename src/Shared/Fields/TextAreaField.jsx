@@ -15,7 +15,6 @@
 */
 
 import React from "react";
-import FieldActions from "../FieldActions";
 const TextAreaField = ({
   control: {
     type,
@@ -36,28 +35,26 @@ const TextAreaField = ({
 
   return (
     <React.Fragment>
-      <FieldActions>
-        <div className="form-group">
-          <label htmlFor={`${type}-${name}-${time}`}>{label}</label>
-          <textarea
-            placeholder={placeholder}
-            className={`form-control ${className}`}
-            name={`${type}-${name}-${time}`}
-            maxlength={maxlength}
-            rows={rows}
-            type={type}
-            id={`${type}-${name}-${time}`}
-            title={title}
-            spellcheck="false"
-            required={required}
-          >
-            {value}
-          </textarea>
-        </div>
-        <div className="form-group col-12">
-          <small>{description}</small>
-        </div>
-      </FieldActions>
+      <div className="form-group">
+        <label htmlFor={`${type}-${name}-${time}`}>{label}</label>
+        <textarea
+          placeholder={placeholder}
+          className={`form-control ${className}`}
+          name={`${type}-${name}-${time}`}
+          maxlength={maxlength}
+          rows={rows}
+          type={type}
+          id={`${type}-${name}-${time}`}
+          title={title}
+          spellcheck="false"
+          required={required}
+        >
+          {value}
+        </textarea>
+      </div>
+      <div className="form-group col-12">
+        <small>{description}</small>
+      </div>
     </React.Fragment>
   );
 };

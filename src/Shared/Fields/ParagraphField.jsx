@@ -8,16 +8,13 @@
   
 */
 import React from "react";
-import FieldActions from "../FieldActions";
 const ParagraphField = ({ control: { type, label, className } }) => {
   const time = new Date().getTime();
   return (
     <React.Fragment>
-      <FieldActions>
-        <p className={className} id={`${type}-${time}`}>
-          {label}
-        </p>
-      </FieldActions>
+      <p className={className} id={`${type}-${time}`}>
+        {label}
+      </p>
     </React.Fragment>
   );
 };

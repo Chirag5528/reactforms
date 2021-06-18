@@ -15,7 +15,6 @@
 */
 
 import React from "react";
-import FieldActions from "../FieldActions";
 const NumberField = ({
   control: {
     field_name,
@@ -35,24 +34,22 @@ const NumberField = ({
   const time = new Date().getTime();
   return (
     <React.Fragment>
-      <FieldActions>
-        <div className="form-group col-12">
-          <label htmlFor={`${name}-${time}`}>{label}</label>
-          <input
-            placeholder={placeholder}
-            className={`form-control ${className}`}
-            name={`${name}-${time}`}
-            value={value}
-            min={min}
-            max={max}
-            step={step}
-            type="number"
-            id={`${name}-${time}`}
-            title={title}
-          />
-        </div>
-        <div className="form-group col-12">{description}</div>
-      </FieldActions>
+      <div className="form-group col-12">
+        <label htmlFor={`${name}-${time}`}>{label}</label>
+        <input
+          placeholder={placeholder}
+          className={`form-control ${className}`}
+          name={`${name}-${time}`}
+          value={value}
+          min={min}
+          max={max}
+          step={step}
+          type="number"
+          id={`${name}-${time}`}
+          title={title}
+        />
+      </div>
+      <div className="form-group col-12">{description}</div>
     </React.Fragment>
   );
 };

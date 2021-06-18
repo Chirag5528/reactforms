@@ -24,8 +24,6 @@
   } */
 
 import React from "react";
-import FieldActions from "../FieldActions";
-
 const SelectField = ({
   control: {
     field_name,
@@ -43,29 +41,27 @@ const SelectField = ({
   const time = new Date().getTime();
   return (
     <React.Fragment>
-      <FieldActions>
-        <div className="form-group col-12">
-          <label htmlFor={`${type}-${name}-${time}`}>{label}</label>
-          <select
-            name={`${type}-${name}-${time}`}
-            id={`${type}-${name}-${time}`}
-            placeholder={placeholder}
-            className={`form-control ${className}`}
-          >
-            {values.map((val, index) => {
-              return (
-                <option
-                  value={val.value}
-                  selected={val.selected ? true : false}
-                  key={index}
-                >
-                  {val.label}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-      </FieldActions>
+      <div className="form-group col-12">
+        <label htmlFor={`${type}-${name}-${time}`}>{label}</label>
+        <select
+          name={`${type}-${name}-${time}`}
+          id={`${type}-${name}-${time}`}
+          placeholder={placeholder}
+          className={`form-control ${className}`}
+        >
+          {values.map((val, index) => {
+            return (
+              <option
+                value={val.value}
+                selected={val.selected ? true : false}
+                key={index}
+              >
+                {val.label}
+              </option>
+            );
+          })}
+        </select>
+      </div>
     </React.Fragment>
   );
 };
