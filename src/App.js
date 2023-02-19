@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+import logo from "./logo.svg";
+import "@aws-amplify/ui-react/styles.css";
 import {
   withAuthenticator,
   Button,
@@ -9,7 +10,7 @@ import {
   Card,
 } from "@aws-amplify/ui-react";
 
-function App() {
+function App({ signOut }) {
   return (
     <React.Fragment>
       <View className="App">
