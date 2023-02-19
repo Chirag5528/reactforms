@@ -1,18 +1,11 @@
-import React, { Fragment } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import Sidebar from "./Shared/Sidebar";
-import Content from "./Shared/Content";
-const App = () => {
+import React from "react";
+import "./App.css";
+function App() {
   return (
-    <Fragment>
-      <div className="App">
-        <Router>
-          <Sidebar />
-          <Content></Content>
-        </Router>
-      </div>
-    </Fragment>
+    <>
+      <h1> This is something that should come</h1>
+    </>
   );
-};
+}
 
 export default App;
