@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "reactforms8e0c00f0": {}
+      },
+      "api": {
+        "reactforms": {}
       }
     }
   }
